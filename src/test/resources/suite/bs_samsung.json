@@ -1,0 +1,7 @@
+{
+  "app": "IntivePatronage",
+  "device":"Samsung Galaxy S9",
+  "os_version": "8.0",
+  "browserstack.networkLogs" : "true"
+
+}
