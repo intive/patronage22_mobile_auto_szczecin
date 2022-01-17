@@ -1,6 +1,6 @@
 ### FRAMEWORK
 
-This is simple example of test automation web framework.
+This is simple example of test automation mobile framework.
 - Java 15 or less (everything 15+ will fail the framework WHY ? TO READ: "illegal reflective access operation" and Java 15 + and Appium + 
 Cucumber, I will explain later how to deal with that)
 - Maven
