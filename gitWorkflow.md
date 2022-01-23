@@ -1,6 +1,6 @@
 ## The aim of this document is to provide simple guidelines about Git workflow that is used in the Test Automation project.
 
-**Branches** 
+**Branches**   
 When someone start working on task he should create feature branch with name of the task he is currently working on PROPER PATH:
 
 * feat/{task number}/{task name}
