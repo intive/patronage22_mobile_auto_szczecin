@@ -37,7 +37,7 @@ public class MobileDriverSetup {
 
         //This is rather for fun for BrowserStack , will be removed later
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd");
-        String buildName = String.format("Szczecin JS %s:%s",BUILD,simpleDateFormat.format(new Date()));
+        String buildName = String.format("Szczecin Mobile %s:%s",BUILD,simpleDateFormat.format(new Date()));
 
         ConfigurationManager configurationManager = new ConfigurationManager();
         Map<String, String> capabilities_mobile = configurationManager.getMobileConfiguration();
