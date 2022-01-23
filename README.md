@@ -9,6 +9,9 @@ Cucumber, I will explain later how to deal with that)
 - Cucumber
 - BrowserStack
 
+### Important
+- On Github Actions Java version is 11 (Fix this soon) 
+
 ### TEST FRAMEWORK SETUP
 
 Install the most important package manager for MAC
