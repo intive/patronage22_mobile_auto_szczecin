@@ -29,6 +29,7 @@ public class MobileDriverSetup {
     public static AppiumDriver<MobileElement> DRIVER;
     public static final String USERNAME = System.getenv("BROWSERSTACK_USER");
     public static final String AUTOMATE_KEY = System.getenv("BROWSERSTACK_KEY");
+    public static final String BUILD = System.getenv("BUILD");
     public static final String BROWSERSTACK_URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 
@@ -36,7 +37,7 @@ public class MobileDriverSetup {
 
         //This is rather for fun for BrowserStack , will be removed later
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd");
-        String date = String.format("Patronage_date:%s", simpleDateFormat.format(new Date()));
+        String buildName = String.format("Szczecin JS %s:%s",BUILD,simpleDateFormat.format(new Date()));
 
         ConfigurationManager configurationManager = new ConfigurationManager();
         Map<String, String> capabilities_mobile = configurationManager.getMobileConfiguration();
@@ -44,7 +45,7 @@ public class MobileDriverSetup {
 
         if (useBrowserStack != null) {
             capabilities_mobile.put("project", "PatronageSzczecinMobile");
-            capabilities_mobile.put("build", date);
+            capabilities_mobile.put("build", buildName);
             capabilities_mobile.put("name", scenarioName);
             DesiredCapabilities caps = new DesiredCapabilities(capabilities_mobile);
             DRIVER = new AndroidDriver<>(new URL(BROWSERSTACK_URL), caps);
