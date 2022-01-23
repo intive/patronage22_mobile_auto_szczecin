@@ -1,4 +1,4 @@
-name: Web Test Automation
+name: Mobile Test Automation
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     uses: intive/patronage22_mobile_auto_szczecin/.github/workflows/main-template.yml@main
     with:
       BUILD: Main Automation
-      NAME: Test Chrome on Windows
+      NAME: Test Mobile on Samsung
       RUN: mvn clean test -Ddevice="bs_samsung" -Dbrowserstack="True"
     secrets:
       BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
