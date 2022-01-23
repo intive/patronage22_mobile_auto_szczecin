@@ -1,0 +1,18 @@
+name: Daily regression tests
+
+on:
+  schedule:
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+
+jobs:
+  Main:
+    uses: intive/patronage22_mobile_auto_szczecin/.github/workflows/main-template.yml@main
+    with:
+      BUILD: Regression
+      NAME: Test Chrome on Windows
+      RUN: mvn clean test -Ddevice="bs_samsung" -Dbrowserstack="True"
+    secrets:
+      BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
+      BROWSERSTACK_KEY: ${{ secrets.BROWSERSTACK_KEY }}
+
