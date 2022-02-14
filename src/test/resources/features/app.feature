@@ -1,11 +1,10 @@
-Feature: Not even smoke just example
+Feature: Smoke test - check if application is open
 
   Background:
-    Given Application is opened
+    Given Application is open
 
-  Scenario: Select TODO
-    When I select add todo button
-    Then Todo screen appear
+  Scenario: Open application without issue
+    Then "Adres e-mail" text should be visible
 
 
 

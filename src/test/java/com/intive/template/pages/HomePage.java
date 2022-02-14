@@ -8,32 +8,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
 
-    @AndroidFindBy(id = "addToDoItemFAB")
-    MobileElement addTodoButton;
+    @AndroidFindBy(id="email")
+    MobileElement emailField;
 
-    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"More options\"]")
-    MobileElement hamburgerMenuButton;
-
-    @AndroidFindBy(id = "userToDoEditText")
-    MobileElement editTextField;
-
-    public boolean isApplicationReady() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 35);
-        wait.until(ExpectedConditions.visibilityOf(hamburgerMenuButton));
-        return hamburgerMenuButton.isDisplayed();
+    public void isApplicationOpen() {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 10);
+        wait.until(ExpectedConditions.visibilityOf(emailField));
+        emailField.isDisplayed();
     }
 
-    public void selectTodoButton() {
-        addTodoButton.click();
+    public String getEmail() {
+        return emailField.getText();
     }
-
-    public boolean isAddTodoScreenIsVisible() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 35);
-        wait.until(ExpectedConditions.visibilityOf(editTextField));
-        return editTextField.isDisplayed();
-
-    }
-
-
-
 }

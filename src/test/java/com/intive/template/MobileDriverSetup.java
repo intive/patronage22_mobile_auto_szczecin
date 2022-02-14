@@ -4,6 +4,7 @@ import com.intive.template.configuration.ConfigurationManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
@@ -26,7 +27,7 @@ import java.util.Map;
 public class MobileDriverSetup {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MobileDriverSetup.class);
-    public static AppiumDriver<MobileElement> DRIVER;
+    public static AppiumDriver<AndroidElement> DRIVER;
     public static final String USERNAME = System.getenv("BROWSERSTACK_USER");
     public static final String AUTOMATE_KEY = System.getenv("BROWSERSTACK_KEY");
     public static final String BUILD = System.getenv("BUILD");
@@ -51,10 +52,10 @@ public class MobileDriverSetup {
             DRIVER = new AndroidDriver<>(new URL(BROWSERSTACK_URL), caps);
         } else {
             String currentPath = Paths.get(".").toAbsolutePath().normalize().toString();
-            String applicationLocation = String.format("%s/src/test/resources/application/%s", currentPath, "app-release.apk");
+            String applicationLocation = String.format("%s/src/test/resources/application/%s", currentPath, "RetroBoard-debug-v1.0-c39.apk");
             capabilities_mobile.put("app", applicationLocation);
             DesiredCapabilities caps = new DesiredCapabilities(capabilities_mobile);
-            DRIVER = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+            DRIVER = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
         }
     }
 
