@@ -9,9 +9,9 @@ import org.junit.Assert;
 public class HomeSteps {
     HomePage homePage = new HomePage();
 
-    @Given("Application is open")
+    @Given("Application is opened")
     public void retroBoardIsOpen(){
-        homePage.isApplicationOpen();
+        Assert.assertTrue("Application is not opened", homePage.isApplicationOpen());
     }
 
     @Then("{string} text should be visible")

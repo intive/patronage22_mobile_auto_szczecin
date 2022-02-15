@@ -11,10 +11,10 @@ public class HomePage extends BasePage {
     @AndroidFindBy(id="email")
     MobileElement emailField;
 
-    public void isApplicationOpen() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 10);
+    public boolean isApplicationOpen() {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
         wait.until(ExpectedConditions.visibilityOf(emailField));
-        emailField.isDisplayed();
+        return emailField.isDisplayed();
     }
 
     public String getEmail() {
