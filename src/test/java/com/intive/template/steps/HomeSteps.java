@@ -16,6 +16,8 @@ public class HomeSteps {
 
     @Then("{string} text should be visible")
     public void emailIsVisible(String textMessage) {
-        Assert.assertEquals(homePage.getEmail(), textMessage);
+            Assert.assertEquals("The test is failed, text should be \"" + textMessage
+                    + "\" but it is \"" + homePage.getEmail() + "\"", homePage.getEmail(), textMessage);
+        }
     }
-}
+
