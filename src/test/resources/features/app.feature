@@ -4,7 +4,7 @@ Feature: Smoke test - check if application is open
     Given Application is opened
 
   Scenario: Open application without issue
-    Then "Adres e-mail" text should be visible
+    Then "Email" text should be visible
 
 
 

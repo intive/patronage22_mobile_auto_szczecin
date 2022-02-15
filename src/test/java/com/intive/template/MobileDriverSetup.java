@@ -51,10 +51,10 @@ public class MobileDriverSetup {
             DRIVER = new AndroidDriver<>(new URL(BROWSERSTACK_URL), caps);
         } else {
             String currentPath = Paths.get(".").toAbsolutePath().normalize().toString();
-            String applicationLocation = String.format("%s/src/test/resources/application/%s", currentPath, "RetroBoard-debug-v1.0-c39.apk");
+            String applicationLocation = String.format("%s/src/test/resources/application/%s", currentPath, "RetroBoard.apk");
             capabilities_mobile.put("app", applicationLocation);
             DesiredCapabilities caps = new DesiredCapabilities(capabilities_mobile);
-            DRIVER = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+            DRIVER = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         }
     }
 
