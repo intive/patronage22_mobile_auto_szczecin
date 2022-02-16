@@ -1,5 +1,6 @@
 {
   "platformName": "Android",
   "deviceName": "ANDROID",
-  "noReset": "true"
+  "appPackage": "com.intive.patronage.retro",
+  "appActivity": "com.intive.patronage.retro.MainActivity"
 }

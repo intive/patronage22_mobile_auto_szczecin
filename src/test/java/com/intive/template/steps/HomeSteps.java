@@ -3,25 +3,21 @@ package com.intive.template.steps;
 import com.intive.template.pages.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class HomeSteps {
 
+public class HomeSteps {
     HomePage homePage = new HomePage();
 
     @Given("Application is opened")
-    public void applicationIsOpened() {
-        Assert.assertTrue("Application did not load", homePage.isApplicationReady());
+    public void retroBoardIsOpen(){
+        Assert.assertTrue("Application is not opened", homePage.isApplicationOpen());
     }
 
-    @When("I select add todo button")
-    public void iSelectAddTodoButton() {
-        homePage.selectTodoButton();
+    @Then("{string} text should be visible")
+    public void emailIsVisible(String textMessage) {
+        String message = String.format("The test is failed, text should be \"%s\", but it is \"%s\"", textMessage, homePage.getEmail());
+            Assert.assertEquals(message, homePage.getEmail(), textMessage);
+        }
     }
 
-    @Then("Todo screen appear")
-    public void todoScreenAppear() {
-        Assert.assertTrue("Todo screen was not visible", homePage.isAddTodoScreenIsVisible());
-    }
-}
