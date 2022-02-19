@@ -7,10 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage extends BasePage{
 
-    @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc='Open navigation drawer']")
+    @AndroidFindBy(accessibility = "Open navigation drawer")
     MobileElement navigationIcon;
 
-    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='More options']")
+    @AndroidFindBy(accessibility = "More options")
     MobileElement moreOptionsIcon;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[3]/android.widget.CheckedTextView")

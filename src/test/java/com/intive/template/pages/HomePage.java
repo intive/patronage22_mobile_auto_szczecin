@@ -30,7 +30,7 @@ public class HomePage extends BasePage {
         return emailField.getText();
     }
 
-    public void sendEmail(){
+    public void writeEmail() {
         emailField.click();
         emailField.sendKeys("patronage.szczecin22@gmail.com");
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
@@ -38,7 +38,7 @@ public class HomePage extends BasePage {
         nextButton.click();
     }
 
-    public void sendPassword() {
+    public void writePassword() {
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
         wait.until(ExpectedConditions.visibilityOf(passwordField));
         passwordField.click();

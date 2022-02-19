@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
-public class HomeSteps {
+public class HomeSteps{
     HomePage homePage = new HomePage();
 
     @Given("Application is opened")
@@ -17,19 +17,20 @@ public class HomeSteps {
     }
 
     @Then("{string} text should be visible")
-    public void emailIsVisible(String textMessage) {
-        String message = String.format("The test is failed, text should be \"%s\", but it is \"%s\"", textMessage, homePage.getEmail());
+    public void emailIsVisible(String textMessage){
+        String message = String.format("The test is failed, text should be \"%s\", but it is \"%s\"",
+                textMessage, homePage.getEmail());
             Assert.assertEquals(message, homePage.getEmail(), textMessage);
     }
 
-    @When("User send email")
-    public void emailIsSent() {
-        homePage.sendEmail();
+    @When("User write email")
+    public void emailIsSent(){
+        homePage.writeEmail();
     }
 
-    @And("User send password")
-    public void passwordIsSent() {
-        homePage.sendPassword();
+    @And("User write password")
+    public void passwordIsSent(){
+        homePage.writePassword();
     }
 }
 

@@ -26,7 +26,8 @@ public class MainSteps {
 
     @Then("{string} should be visible")
     public void textProfileScreenIsVisible(String profileScreen){
-        String screenName = String.format("The test is failed, text should be \"%s\", but it is \"%s\"", profileScreen, mainPage.getProfileScreenText());
+        String screenName = String.format("The test is failed, text should be \"%s\", but it is \"%s\"",
+                profileScreen, mainPage.getProfileScreenText());
         Assert.assertEquals(screenName, mainPage.getProfileScreenText(), profileScreen);
     }
 }
