@@ -8,8 +8,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
 
-    @AndroidFindBy(id="email")
+    @AndroidFindBy(id = "email")
     MobileElement emailField;
+
+    @AndroidFindBy(id = "button_next")
+    MobileElement nextButton;
+
+    @AndroidFindBy(id = "password")
+    MobileElement passwordField;
+
+    @AndroidFindBy(id = "button_done")
+    MobileElement loginButton;
 
     public boolean isApplicationOpen() {
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
@@ -19,5 +28,21 @@ public class HomePage extends BasePage {
 
     public String getEmail() {
         return emailField.getText();
+    }
+
+    public void writeEmail() {
+        emailField.click();
+        emailField.sendKeys("patronage.szczecin22@gmail.com");
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        wait.until(ExpectedConditions.visibilityOf(nextButton));
+        nextButton.click();
+    }
+
+    public void writePassword() {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        wait.until(ExpectedConditions.visibilityOf(passwordField));
+        passwordField.click();
+        passwordField.sendKeys("AndroidPatronage");
+        loginButton.click();
     }
 }
