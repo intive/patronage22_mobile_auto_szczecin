@@ -8,8 +8,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
 
-    @AndroidFindBy(id="email")
+    @AndroidFindBy(id = "email")
     MobileElement emailField;
+
+    @AndroidFindBy(id = "button_next")
+    MobileElement nextButton;
+
+    public void clickNextButton() {
+        nextButton.click();
+    }
+
+    public void putMail(String mail) {
+
+        emailField.setValue(mail);
+    }
 
     public boolean isApplicationOpen() {
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);

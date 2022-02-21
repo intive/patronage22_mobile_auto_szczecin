@@ -19,5 +19,15 @@ public class HomeSteps {
         String message = String.format("The test is failed, text should be \"%s\", but it is \"%s\"", textMessage, homePage.getEmail());
             Assert.assertEquals(message, homePage.getEmail(), textMessage);
         }
+    @Then("Input mail {string}")
+    public void inputMail(String mail) {
+    homePage.putMail(mail);
+
     }
+    @Then("Click next button")
+    public void clickNextButton() {
+    homePage.clickNextButton();
+
+    }
+}
 
