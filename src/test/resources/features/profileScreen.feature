@@ -12,9 +12,8 @@ Feature: Automate Profile screen
     Then "Profile screen" should be visible
 
   Scenario: Logout
-    When User write email
-    And User write password
+    Given User is logged in
     And Navigation drawer is opened
     And Profile screen is opened
     And Click three dots button
-    And Click Logout
+    Then Click Logout
