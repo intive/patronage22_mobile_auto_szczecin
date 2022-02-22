@@ -16,5 +16,5 @@ Feature: Automate Profile screen
     Given User is logged in
     And Navigation drawer is opened
     And Profile screen is opened
-    And Click three dots button
-    Then Click Logout
+    And Menu more options is opened
+    Then Login screen is presented

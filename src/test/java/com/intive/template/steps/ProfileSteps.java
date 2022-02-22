@@ -5,12 +5,13 @@ import com.intive.template.pages.MainPage;
 import com.intive.template.pages.ProfilePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class ProfileSteps {
 
     ProfilePage profilePage = new ProfilePage();
     HomePage homePage = new HomePage();
-    MainPage mainPage=new MainPage();
+    MainPage mainPage = new MainPage();
 
     @Given("User is logged in")
     public void login() {
@@ -18,13 +19,14 @@ public class ProfileSteps {
         homePage.writePassword();
     }
 
-    @Then("Click three dots button")
-    public void clickThreeDotsButton() {
+    @Then("Menu more options is opened")
+    public void openMoreOptions() {
         mainPage.openMoreOptions();
     }
 
-    @Then("Click Logout")
-    public void clickLogout() {
+    @Then("Login screen is presented")
+    public void loginScreenIsPresented() {
         profilePage.clickLogoutButton();
+        Assert.assertTrue("Did not log out correctly", homePage.isApplicationOpen());
     }
 }
