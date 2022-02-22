@@ -44,4 +44,7 @@ public class MainPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(profileScreen));
         return profileScreen.getText();
     }
+    public void openMoreOptions(){
+        moreOptionsIcon.click();
+    }
 }

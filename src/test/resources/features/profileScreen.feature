@@ -11,6 +11,7 @@ Feature: Automate Profile screen
     And Bottom app is visible
     Then "Profile screen" should be visible
 
+  @P2022-782
   Scenario: Logout
     Given User is logged in
     And Navigation drawer is opened
