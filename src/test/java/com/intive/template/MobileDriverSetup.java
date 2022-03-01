@@ -54,7 +54,6 @@ public class MobileDriverSetup {
             String applicationLocation = String.format("%s/src/test/resources/application/%s", currentPath, "RetroBoard.apk");
             capabilities_mobile.put("app", applicationLocation);
             DesiredCapabilities caps = new DesiredCapabilities(capabilities_mobile);
-            caps.setCapability("fullReset","true");
             DRIVER = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         }
     }
