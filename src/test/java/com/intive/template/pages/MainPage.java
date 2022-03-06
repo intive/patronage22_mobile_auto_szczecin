@@ -2,6 +2,7 @@ package com.intive.template.pages;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,16 +14,13 @@ public class MainPage extends BasePage {
     @AndroidFindBy(accessibility = "More options")
     MobileElement moreOptionsIcon;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[3]/android.widget.CheckedTextView")
+    @AndroidFindBy(id = "com.intive.patronage.retro:id/profileFragment")
     MobileElement profileScreenButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView")
-    MobileElement screenText;
-
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[1]/android.widget.CheckedTextView")
+    @AndroidFindBy(id = "com.intive.patronage.retro:id/boardsFragment")
     MobileElement boardsScreenButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[2]/android.widget.CheckedTextView")
+    @AndroidFindBy(id = "com.intive.patronage.retro:id/historyFragment")
     MobileElement historyScreenButton;
 
     public void openNavigationDrawer() {
@@ -57,10 +55,11 @@ public class MainPage extends BasePage {
         return moreOptionsIcon.isDisplayed();
     }
 
-    public String getScreenText() {
+    public boolean checkIfScreenIsVisible(String screen) {
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
-        wait.until(ExpectedConditions.visibilityOf(screenText));
-        return screenText.getText();
+        MobileElement foundElement = DRIVER.findElement(By.xpath(String.format("//android.view.ViewGroup[@content-desc=\"%s\"]", screen)));
+        wait.until(ExpectedConditions.visibilityOf(foundElement));
+        return foundElement.isDisplayed();
     }
 
     public void openMoreOptions() {

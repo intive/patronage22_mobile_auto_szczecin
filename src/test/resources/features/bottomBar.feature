@@ -8,11 +8,11 @@ Feature: Automate Bottom bar
     Given Main screen is open
     And Navigation drawer is opened
     And Boards screen is opened
-    Then "Boards" should be visible
+    Then "Board screen" should be visible
 
   @P2022-1171
   Scenario: Navigation icon test (history)
     Given Main screen is open
     And Navigation drawer is opened
     And History screen is opened
-    Then "History" should be visible
+    Then "History screen" should be visible

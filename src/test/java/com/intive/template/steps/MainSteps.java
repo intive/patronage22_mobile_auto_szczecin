@@ -25,10 +25,8 @@ public class MainSteps {
     }
 
     @Then("{string} should be visible")
-    public void textScreenIsVisible(String screen) {
-        String screenName = String.format("The test is failed, text should be \"%s\", but it is \"%s\"",
-                screen, mainPage.getScreenText());
-        Assert.assertEquals(screenName, mainPage.getScreenText(), screen);
+    public void screenIsVisible(String screen) {
+        Assert.assertTrue("Screen is not visible", mainPage.checkIfScreenIsVisible(screen));
     }
 
     @And("Boards screen is opened")
