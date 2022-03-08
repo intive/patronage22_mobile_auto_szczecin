@@ -14,13 +14,13 @@ public class MainPage extends BasePage {
     @AndroidFindBy(accessibility = "More options")
     MobileElement moreOptionsIcon;
 
-    @AndroidFindBy(id = "com.intive.patronage.retro:id/profileFragment")
+    @AndroidFindBy(id = "profileFragment")
     MobileElement profileScreenButton;
 
-    @AndroidFindBy(id = "com.intive.patronage.retro:id/boardsFragment")
+    @AndroidFindBy(id = "boardsFragment")
     MobileElement boardsScreenButton;
 
-    @AndroidFindBy(id = "com.intive.patronage.retro:id/historyFragment")
+    @AndroidFindBy(id = "historyFragment")
     MobileElement historyScreenButton;
 
     public void openNavigationDrawer() {
