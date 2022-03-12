@@ -10,7 +10,7 @@ public class RetroSteps {
 
     @Then("{string} retro board id is visible")
     public void retroBoardIdIsVisible(String retroId) {
-        Assert.assertEquals("Board id: 1", retroPage.getRetroScreenTitle());
+        Assert.assertEquals(retroId, retroPage.getRetroScreenTitle());
     }
 
     @And("Arrow back button is visible")

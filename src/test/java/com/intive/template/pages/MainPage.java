@@ -24,7 +24,13 @@ public class MainPage extends BasePage {
     MobileElement historyScreenButton;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Board screen\"]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup")
-    MobileElement boardField;
+    MobileElement retroScreenButtonFirst;
+
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Board screen\"]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.FrameLayout/android.view.ViewGroup")
+    MobileElement retroScreenButtonSecond;
+
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Board screen\"]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.FrameLayout/android.view.ViewGroup")
+    MobileElement retroScreenButtonThird;
 
     public void openNavigationDrawer() {
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
@@ -69,7 +75,15 @@ public class MainPage extends BasePage {
         moreOptionsIcon.click();
     }
 
-    public void openRetroBoard() {
-        boardField.click();
+    public void openFirstRetroBoard() {
+        retroScreenButtonFirst.click();
+    }
+
+    public void openSecondRetroBoard() {
+        retroScreenButtonSecond.click();
+    }
+
+    public void openThirdRetroBoard() {
+        retroScreenButtonThird.click();
     }
 }

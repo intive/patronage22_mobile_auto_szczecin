@@ -39,8 +39,18 @@ public class MainSteps {
         mainPage.openHistoryScreen();
     }
 
-    @And("Retro board is opened")
-    public void retroBoardIsOpen() {
-        mainPage.openRetroBoard();
+    @And("First retro board is opened")
+    public void firstRetroBoardIsOpen() {
+        mainPage.openFirstRetroBoard();
+    }
+
+    @And("Second retro board is opened")
+    public void secondRetroBoardIsOpen() {
+        mainPage.openSecondRetroBoard();
+    }
+
+    @And("Third retro board is opened")
+    public void thirdRetroBoardIsOpen() {
+        mainPage.openThirdRetroBoard();
     }
 }
