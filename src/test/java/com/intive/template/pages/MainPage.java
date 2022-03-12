@@ -13,11 +13,17 @@ public class MainPage extends BasePage{
     @AndroidFindBy(accessibility = "More options")
     MobileElement moreOptionsIcon;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[3]/android.widget.CheckedTextView")
+    @AndroidFindBy(id = "profileFragment")
     MobileElement profileScreenButton;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView")
     MobileElement profileScreen;
+
+    @AndroidFindBy(id = "boardsFragment")
+    MobileElement boardsScreenButton;
+
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Board screen\"]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup")
+    MobileElement boardField;
 
     public void openNavigationDrawer(){
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
@@ -47,5 +53,15 @@ public class MainPage extends BasePage{
 
     public void openMoreOptions(){
         moreOptionsIcon.click();
+    }
+
+    public void openBoardsScreen() {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        wait.until(ExpectedConditions.visibilityOf(boardsScreenButton));
+        boardsScreenButton.click();
+    }
+
+    public void openRetroBoard() {
+        boardField.click();
     }
 }

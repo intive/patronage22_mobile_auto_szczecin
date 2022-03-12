@@ -3,6 +3,7 @@ package com.intive.template.steps;
 import com.intive.template.pages.MainPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class MainSteps {
@@ -29,5 +30,15 @@ public class MainSteps {
         String screenName = String.format("The test is failed, text should be \"%s\", but it is \"%s\"",
                 profileScreen, mainPage.getProfileScreenText());
         Assert.assertEquals(screenName, mainPage.getProfileScreenText(), profileScreen);
+    }
+
+    @And("Boards screen is opened")
+    public void boardsScreenIsOpen() {
+        mainPage.openBoardsScreen();
+    }
+
+    @And("Retro board is opened")
+    public void retroBoardIsOpen() {
+        mainPage.openRetroBoard();
     }
 }
