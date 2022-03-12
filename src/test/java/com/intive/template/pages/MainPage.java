@@ -2,10 +2,11 @@ package com.intive.template.pages;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MainPage extends BasePage{
+public class MainPage extends BasePage {
 
     @AndroidFindBy(accessibility = "Open navigation drawer")
     MobileElement navigationIcon;
@@ -16,49 +17,56 @@ public class MainPage extends BasePage{
     @AndroidFindBy(id = "profileFragment")
     MobileElement profileScreenButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView")
-    MobileElement profileScreen;
-
     @AndroidFindBy(id = "boardsFragment")
     MobileElement boardsScreenButton;
+
+    @AndroidFindBy(id = "historyFragment")
+    MobileElement historyScreenButton;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Board screen\"]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup")
     MobileElement boardField;
 
-    public void openNavigationDrawer(){
+    public void openNavigationDrawer() {
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
         wait.until(ExpectedConditions.visibilityOf(navigationIcon));
         navigationIcon.click();
     }
 
-    public void openProfileScreen(){
+    public void openProfileScreen() {
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
         wait.until(ExpectedConditions.visibilityOf(profileScreenButton));
         profileScreenButton.click();
-    }
-
-    public boolean navigationIconIsVisible(){
-        return navigationIcon.isDisplayed();
-    }
-
-    public boolean moreOptionsIconIsVisible(){
-        return moreOptionsIcon.isDisplayed();
-    }
-
-    public String getProfileScreenText(){
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
-        wait.until(ExpectedConditions.visibilityOf(profileScreen));
-        return profileScreen.getText();
-    }
-
-    public void openMoreOptions(){
-        moreOptionsIcon.click();
     }
 
     public void openBoardsScreen() {
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
         wait.until(ExpectedConditions.visibilityOf(boardsScreenButton));
         boardsScreenButton.click();
+    }
+
+    public void openHistoryScreen() {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        wait.until(ExpectedConditions.visibilityOf(historyScreenButton));
+        historyScreenButton.click();
+    }
+
+    public boolean navigationIconIsVisible() {
+        return navigationIcon.isDisplayed();
+    }
+
+    public boolean moreOptionsIconIsVisible() {
+        return moreOptionsIcon.isDisplayed();
+    }
+
+    public boolean checkIfScreenIsVisible(String screen) {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        MobileElement foundElement = DRIVER.findElement(By.xpath(String.format("//android.view.ViewGroup[@content-desc=\"%s\"]", screen)));
+        wait.until(ExpectedConditions.visibilityOf(foundElement));
+        return foundElement.isDisplayed();
+    }
+
+    public void openMoreOptions() {
+        moreOptionsIcon.click();
     }
 
     public void openRetroBoard() {
