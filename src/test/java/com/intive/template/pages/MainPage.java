@@ -24,25 +24,25 @@ public class MainPage extends BasePage {
     MobileElement historyScreenButton;
 
     public void openNavigationDrawer() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         wait.until(ExpectedConditions.visibilityOf(navigationIcon));
         navigationIcon.click();
     }
 
     public void openProfileScreen() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         wait.until(ExpectedConditions.visibilityOf(profileScreenButton));
         profileScreenButton.click();
     }
 
     public void openBoardsScreen() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         wait.until(ExpectedConditions.visibilityOf(boardsScreenButton));
         boardsScreenButton.click();
     }
 
     public void openHistoryScreen() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         wait.until(ExpectedConditions.visibilityOf(historyScreenButton));
         historyScreenButton.click();
     }
@@ -56,7 +56,7 @@ public class MainPage extends BasePage {
     }
 
     public boolean checkIfScreenIsVisible(String screen) {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         MobileElement foundElement = DRIVER.findElement(By.xpath(String.format("//android.view.ViewGroup[@content-desc=\"%s\"]", screen)));
         wait.until(ExpectedConditions.visibilityOf(foundElement));
         return foundElement.isDisplayed();
