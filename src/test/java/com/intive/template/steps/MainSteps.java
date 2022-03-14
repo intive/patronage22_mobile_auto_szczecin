@@ -3,6 +3,7 @@ package com.intive.template.steps;
 import com.intive.template.pages.MainPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class MainSteps {
@@ -39,17 +40,17 @@ public class MainSteps {
         mainPage.openHistoryScreen();
     }
 
-    @And("First retro board is opened")
+    @When("First retro board is opened")
     public void firstRetroBoardIsOpen() {
         mainPage.openFirstRetroBoard();
     }
 
-    @And("Second retro board is opened")
+    @When("Second retro board is opened")
     public void secondRetroBoardIsOpen() {
         mainPage.openSecondRetroBoard();
     }
 
-    @And("Third retro board is opened")
+    @When("Third retro board is opened")
     public void thirdRetroBoardIsOpen() {
         mainPage.openThirdRetroBoard();
     }
