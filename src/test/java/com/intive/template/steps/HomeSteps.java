@@ -37,5 +37,34 @@ public class HomeSteps {
         homePage.writeEmail();
         homePage.writePassword();
     }
-}
 
+    @Then("Provide login: {string}")
+    public void provideLogin(String login) {
+        System.out.println(homePage.getNewUser());
+        homePage.writeEmail(login);
+    }
+
+    @Then("Provide password: {string}")
+    public void providePassword(String password) {
+        homePage.writePassword(password);
+    }
+
+    @And("Provide login for new account")
+    public void provideNewLogin() {
+        homePage.writeEmail(homePage.getNewUser());
+    }
+
+    @And("Provide name for new account")
+    public void provideNewName() { homePage.writeName("Durand Jones"); }
+
+    @And("Click on sign in button")
+    public void clickSignInButton() { homePage.clickSignInButton(); }
+
+    @And("Click on save button")
+    public void clickSaveButton() { homePage.clickSaveButton(); }
+
+    @And("Provide password for new account")
+    public void provideNewUserPassword() {
+        homePage.writePassword("rideordie");
+    }
+}
