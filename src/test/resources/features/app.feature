@@ -12,7 +12,7 @@ Feature: Smoke test - check if application is open
     And User write password
     Then Navigation drawer is opened
 
-  @P2022-1237
+  @P2022-1237 @skip
   Scenario: Register new user
     When Write login for new account
     And Write name for new account
