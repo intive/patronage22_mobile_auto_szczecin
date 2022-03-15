@@ -55,26 +55,34 @@ public class HomePage extends BasePage {
 
     public void writeEmail(String email) {
         emailField.click();
-        emailField.sendKeys(email); //"patronage.szczecin22@gmail.com"
+        emailField.sendKeys(email);
         WebDriverWait wait = new WebDriverWait(DRIVER, 30);
         wait.until(ExpectedConditions.visibilityOf(nextButton));
         nextButton.click();
     }
 
     public void writeName(String name) {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        wait.until(ExpectedConditions.visibilityOf(nameField));
         nameField.sendKeys(name);
     }
 
     public void writePassword(String password) {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        wait.until(ExpectedConditions.visibilityOf(passwordField));
         passwordField.click();
-        passwordField.sendKeys(password); //"AndroidPatronage"
+        passwordField.sendKeys(password);
     }
 
     public void clickSignInButton() {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        wait.until(ExpectedConditions.visibilityOf(loginButton));
         loginButton.click();
     }
 
     public void clickSaveButton() {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        wait.until(ExpectedConditions.visibilityOf(saveButton));
         saveButton.click();
     }
 
@@ -82,7 +90,7 @@ public class HomePage extends BasePage {
         return String.valueOf(Instant.now().getEpochSecond());
     }
 
-    public String getNewUser() {
+    public String getNewUserEmail() {
         return getTimestamp() + "@djati.com";
     }
 }

@@ -38,24 +38,13 @@ public class HomeSteps {
         homePage.writePassword();
     }
 
-    @Then("Provide login: {string}")
-    public void provideLogin(String login) {
-        System.out.println(homePage.getNewUser());
-        homePage.writeEmail(login);
-    }
-
-    @Then("Provide password: {string}")
-    public void providePassword(String password) {
-        homePage.writePassword(password);
-    }
-
-    @And("Provide login for new account")
+    @And("Write login for new account")
     public void provideNewLogin() {
-        homePage.writeEmail(homePage.getNewUser());
+        homePage.writeEmail(homePage.getNewUserEmail());
     }
 
-    @And("Provide name for new account")
-    public void provideNewName() { homePage.writeName("Durand Jones"); }
+    @And("Write name for new account")
+    public void provideNewName() { homePage.writeName("Indianapolis Jones"); }
 
     @And("Click on sign in button")
     public void clickSignInButton() { homePage.clickSignInButton(); }
@@ -63,7 +52,7 @@ public class HomeSteps {
     @And("Click on save button")
     public void clickSaveButton() { homePage.clickSaveButton(); }
 
-    @And("Provide password for new account")
+    @And("Write password for new account")
     public void provideNewUserPassword() {
         homePage.writePassword("rideordie");
     }
