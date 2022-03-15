@@ -21,7 +21,7 @@ public class HomePage extends BasePage {
     MobileElement loginButton;
 
     public boolean isApplicationOpen() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         wait.until(ExpectedConditions.visibilityOf(emailField));
         return emailField.isDisplayed();
     }
@@ -33,13 +33,13 @@ public class HomePage extends BasePage {
     public void writeEmail() {
         emailField.click();
         emailField.sendKeys("patronage.szczecin22@gmail.com");
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         wait.until(ExpectedConditions.visibilityOf(nextButton));
         nextButton.click();
     }
 
     public void writePassword() {
-        WebDriverWait wait = new WebDriverWait(DRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         wait.until(ExpectedConditions.visibilityOf(passwordField));
         passwordField.click();
         passwordField.sendKeys("AndroidPatronage");
