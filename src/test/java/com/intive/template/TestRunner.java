@@ -12,7 +12,8 @@ import org.junit.runner.RunWith;
         glue = "com.intive.template",
         plugin = {"pretty", "json:target/cucumber-reports.json",
                 "html:target/cucumber-reports.html",
-                "junit:target/cucumber-reports.xml"}
+                "junit:target/cucumber-reports.xml"},
+        tags = "not @skip"
 )
 public class TestRunner {
 
