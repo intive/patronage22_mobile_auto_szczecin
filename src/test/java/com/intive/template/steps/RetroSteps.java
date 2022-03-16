@@ -17,4 +17,18 @@ public class RetroSteps {
     public void isVisibleArrowBackButton() {
         Assert.assertTrue("Arrow button should be visible", retroPage.arrowBackButtonIsVisible());
     }
+
+    @Then("Retro board is opened")
+    public void retroBoardIsOpened() {
+        retroPage.openRetroBoard();
+    }
+
+    @Then("Board id is visible")
+    public void boardIdIsVisible() {
+        int index = 1;
+        for (String idBoard: retroPage.openRetroBoard()) {
+            Assert.assertEquals(idBoard, "Board id: " + index);
+            index++;
+        }
+    }
 }
