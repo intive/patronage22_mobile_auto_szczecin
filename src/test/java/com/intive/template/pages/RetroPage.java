@@ -4,7 +4,6 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RetroPage extends BasePage {
 
@@ -15,25 +14,19 @@ public class RetroPage extends BasePage {
     MobileElement arrowBackButton;
 
     @AndroidFindBy(id = "constraint_layout_board")
-    List<MobileElement> retroButtons;
+    ArrayList<MobileElement> retroButtons;
 
-    public String getRetroScreenTitle() {
-        return retroScreenTitle.getText();
-    }
+    public boolean openRetroBoardsAndCheckElements() {
+        for (int index = 0; index < retroButtons.size(); index++) {
+            retroButtons.get(index).click();
 
-    public boolean arrowBackButtonIsVisible() {
-        return arrowBackButton.isDisplayed();
-    }
+            if (!retroScreenTitle.isDisplayed()
+                    || !retroScreenTitle.getText().equals("Board id: " + (index + 1))
+                    || !arrowBackButton.isDisplayed())
+                return false;
 
-    List<String> idRetroButtons = new ArrayList<>();;
-
-    public List<String> openRetroBoard() {
-        for(int i = 0; i < retroButtons.size(); i++) {
-            retroButtons.get(i).click();
-            idRetroButtons.add(retroScreenTitle.getText());
-            arrowBackButton.isDisplayed();
             arrowBackButton.click();
         }
-        return idRetroButtons;
+        return true;
     }
 }
