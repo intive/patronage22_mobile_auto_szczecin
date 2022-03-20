@@ -7,9 +7,6 @@ import java.util.ArrayList;
 
 public class RetroPage extends BasePage {
 
-    @AndroidFindBy(id = "retroScreenTitle")
-    MobileElement retroScreenTitle;
-
     @AndroidFindBy(accessibility = "Navigate up")
     MobileElement arrowBackButton;
 
@@ -19,12 +16,7 @@ public class RetroPage extends BasePage {
     public boolean openRetroBoardsAndCheckElements() {
         for (int index = 0; index < retroButtons.size(); index++) {
             retroButtons.get(index).click();
-
-            if (!retroScreenTitle.isDisplayed()
-                    || !retroScreenTitle.getText().equals("Board id: " + (index + 1))
-                    || !arrowBackButton.isDisplayed())
-                return false;
-
+            arrowBackButton.isDisplayed();
             arrowBackButton.click();
         }
         return true;

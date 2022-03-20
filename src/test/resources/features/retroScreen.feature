@@ -8,4 +8,4 @@ Feature: Automate Retro screen
 
     @P2022-1225
   Scenario: Retro boards details screen
-    When Retro boards contains id and arrow back buttons
+    When Retro boards contains arrow back buttons
