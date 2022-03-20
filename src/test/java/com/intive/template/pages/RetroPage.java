@@ -16,7 +16,9 @@ public class RetroPage extends BasePage {
     public boolean openRetroBoardsAndCheckElements() {
         for (int index = 0; index < retroButtons.size(); index++) {
             retroButtons.get(index).click();
-            arrowBackButton.isDisplayed();
+            if (!arrowBackButton.isDisplayed())
+                return false;
+
             arrowBackButton.click();
         }
         return true;
