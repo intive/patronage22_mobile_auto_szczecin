@@ -3,6 +3,7 @@ Feature: Automate Profile screen
   Background:
     Given Application is opened
 
+  @P2022-1005
   Scenario: Open application and check Profile screen
     When User write email
     And User write password
