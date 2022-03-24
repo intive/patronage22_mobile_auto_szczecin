@@ -38,4 +38,7 @@ public class MainSteps {
     public void historyScreenIsOpen() {
         mainPage.openHistoryScreen();
     }
+
+    @Then("More screen is opened")
+    public void moreScreenIsOpened() { mainPage.openMoreScreen(); }
 }
