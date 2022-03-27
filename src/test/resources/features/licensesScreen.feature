@@ -9,4 +9,4 @@ Feature: Automate Open source license from More screen
   Scenario: "License" button functionality
     Given More screen is opened
     When Screen with licences is opened
-    Then Title "Open source licenses" is visible
+    Then Title is visible

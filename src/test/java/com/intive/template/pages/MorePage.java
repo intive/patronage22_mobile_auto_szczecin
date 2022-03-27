@@ -19,7 +19,7 @@ public class MorePage extends BasePage {
         return licensesHeader.isDisplayed();
     }
 
-    public String licenseHeaderTitle(String title) {
+    public String licenseHeaderTitle() {
         return licensesHeader.getText();
     }
 }
