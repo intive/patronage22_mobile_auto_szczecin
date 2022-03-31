@@ -13,8 +13,8 @@ public class MoreSteps {
         Assert.assertTrue("Licenses Header is not visible", morePage.licensesHeaderIsVisible());
     }
 
-    @Then("Title is visible")
-        public void titleScreenIsVisible() {
-        Assert.assertEquals("Open source licenses", morePage.licenseHeaderTitle());
+    @Then("Title {string} is visible")
+    public void titleIsVisible(String title) {
+        Assert.assertEquals(morePage.licenseHeaderTitle(), title);
     }
 }

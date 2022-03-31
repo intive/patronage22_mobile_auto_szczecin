@@ -6,7 +6,7 @@ Feature: Automate Open source license from More screen
     And Navigation drawer is opened
 
   @P2022-1238
-  Scenario: "License" button functionality
+  Scenario: License button functionality
     Given More screen is opened
     When Screen with licences is opened
-    Then Title is visible
+    Then Title "Open source licenses" is visible
