@@ -1,6 +1,8 @@
 name: Mobile Test Automation
 
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
