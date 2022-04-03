@@ -23,6 +23,9 @@ public class MainPage extends BasePage {
     @AndroidFindBy(id = "historyFragment")
     MobileElement historyScreenButton;
 
+    @AndroidFindBy(id = "moreFragment")
+    MobileElement moreScreenButton;
+
     public void openNavigationDrawer() {
         WebDriverWait wait = new WebDriverWait(DRIVER, 45);
         wait.until(ExpectedConditions.visibilityOf(navigationIcon));
@@ -64,5 +67,11 @@ public class MainPage extends BasePage {
 
     public void openMoreOptions() {
         moreOptionsIcon.click();
+    }
+
+    public void openMoreScreen() {
+        WebDriverWait wait = new WebDriverWait(DRIVER, 45);
+        wait.until(ExpectedConditions.visibilityOf(moreScreenButton));
+        moreScreenButton.click();
     }
 }
